@@ -1,6 +1,7 @@
 var API = require("../common/API");
 var pb = require("../common/publicUtil");
 var header = require("../common/templates/header.hbs");
+var apiHost = "http://106.14.123.71:3000/";
 
 var alertNB = pb.alertNB;
 $("#header").html(header);
@@ -25,7 +26,7 @@ $("#header").html(header);
         submitHandler : function(form){
             var data =  $("#reg_form").serializeJson();
             console.log(data);
-            API.postNB("/reg",data,null,function(rs) {
+            API.postNB(apiHost + "/reg",data,null,function(rs) {
                 if (rs.code == "01") {
                     alertNB("注册成功！",function(){
                         window.location.href = "./login.html";
@@ -61,7 +62,7 @@ $("#header").html(header);
       },
       submitHandler : function(form){
           var data =  $("#login_form").serializeJson();
-          API.postNB("/login",data,null,function(rs){
+          API.postNB(apiHost + "/login",data,null,function(rs){
                if(rs.code == "00"){
                 alertNB(rs.message);
                }else if(rs.code == "02"){
