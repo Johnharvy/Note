@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"/>
+    <META HTTP-EQUIV="Expires" CONTENT="0"/>
+    <script src="../dev/plugin/jquery.js"></script>
+    <script src="../dev/plugin/layer.js"></script>
+    <script src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/public.css" />
+    <title>创建日志</title>
+    <style>
+        .write_head{height:40px;border:0px solid #000;background: rgb(248,247,245);color:rgb(150,150,150);
+            font-size:18px;}
+        .write_date ul li{width:60px;float:left;height:40px;list-style: none;border:0px solid #000;line-height:40px;
+                     text-align:center;}
+        .write_btn{width:80px;height:40px;float:right;border:0px solid #000;}
+         #write_cont{overflow-y:scroll;clear:both;}
+        .write_area{width:100%;font-size:18px;resize:none;border-bottom:0px;padding:20px 15px 0px 15px;}
+        .write_area:focus{outline-color: coral;}
+        .add_btn{display:inline-block;width:100%;height:100%;background-image:url("../img/add.png");
+            background-position:0px -15px;}
+    </style>
+</head>
+<body>
+    <div class="write_head">
+         <div class="write_date">
+             <ul>
+                 <li></li>
+                 <li></li>
+                 <li></li>
+             </ul>
+         </div>
+         <div class="write_btn"><div class="add_btn"></div></div>
+    </div>
+
+    <div id="write_cont">
+    <textarea class="write_area">
+
+    </textarea>
+    </div>
+    <script src="../js/write.js"></script>
+</body>
+</html>

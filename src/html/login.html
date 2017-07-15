@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"/>
+    <META HTTP-EQUIV="Expires" CONTENT="0"/>
+    <script src="../dev/plugin/jquery.js"></script>
+    <script src="../dev/plugin/layer.js"></script>
+    <script src="../dev/plugin/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.min.css"/>
+    <script src="../dev/plugin/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="../css/public.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <script src="../js/common.js"></script>
+    <title>登陆页</title>
+    <style>
+        .label{width:20%;float:left;line-height:45px;}
+        .for_{width:80%;float:left;}
+    </style>
+</head>
+
+     <div id="header"></div>
+     <div data-role ="content">
+         <div id="login_cont">
+             <form id="login_form" enctype="multipart/form-data" method="post">
+                 <div class="label"><label forName="userName">姓名：</label></div>
+                 <div class="for_"><input type="text" id="userName" name="userName"></div>
+                 <div class="label"><label forName="password">密码：</label></div>
+                 <div class="for_"><input type="password" id="password" name="password"></div>
+                 <div style="clear:both;"><input type="submit" value="提交"></div>
+                 <div style=" text-align:center;margin:30px auto;">还没有账号？请点击这里<a href="./register.html">注册</a></div>
+             </form>
+         </div>
+     </div>
+     <script src="../js/login.js"></script>
+</body>
+</html>

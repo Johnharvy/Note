@@ -1,0 +1,71 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+#header{
+    height:50px;
+    background: -webkit-linear-gradient(rgb(250,250,250),rgb(243,243,243)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(rgb(250,250,250),rgb(243,243,243)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgb(250,250,250),rgb(243,243,243)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgb(250,250,250),rgb(243,243,243)); /* 标准的语法 */
+    border-bottom:1px solid rgb(251,251,251);
+}
+.head_title{
+    width:100px;
+    height:30px;
+    border:0px solid #000;
+    text-align:center;
+    line-height:30px;
+    font-size:18px;
+    font-weight:bold;
+    padding:10px 0px 10px 0px;
+}
+
+#footer{
+    width:100%;
+    height: 50px;
+    border: 0px solid #000;
+    position:fixed;
+    bottom:5px;
+    padding-top:3px;
+
+}
+.create_btn{
+    width:73%;
+    height:45px;
+    border:1px solid #000;
+    float:left;
+    text-align:center;
+    line-height:45px;
+    margin-left:3%;
+    font-size : 18px;
+    font-weight : bold;
+    border-radius:3px;
+
+}
+.delete_btn{
+    width:20%;
+    height:45px;
+    text-align: center;
+    line-height:45px;
+    float:left;
+    border:1px solid #000;
+    margin-left:2%;
+    border-radius:3px;
+}
+
+/*组件样式*/
+ #list_block{width:97%;height:auto;border:0px solid #000;position:relative;padding-top:12px;margin-left:5px;}
+.list_single{margin-top:0px;height:auto;border:0px solid #000;border-bottom:1px solid rgb(222,222,222);padding-bottom:10px;}
+.list_time{width:40%;height:20px;position:relative;top:0px;left:0px;}
+.list_line{height:1px;background:rgb(0,146,95);margin:0px 0px 0px 0px;}
+.list_content{width:98%;height:20px;position:relative;top:10px;left:5px;font-size:18px;overflow:hidden;text-overflow:ellipsis;}
+.list_date{width:40%;height:20px;margin-top:15px;margin-left:8px;}
+/*列表组件结束*/
+
+
+
+
+
+
+
