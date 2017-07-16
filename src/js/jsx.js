@@ -41,6 +41,7 @@ webpackJsonp([1],[
 	var API = __webpack_require__(22);
 	var pb = __webpack_require__(24);
 	var struct = __webpack_require__(211);
+	var apiHost = "http://106.14.123.71:3000"; 
 
 	/*
 	 //样例数据格式
@@ -49,7 +50,7 @@ webpackJsonp([1],[
 	];*/
 
 	 //请求index的数据
-	API.getNB("/index",null,function(rs){
+	API.getNB(apiHost + "/index",null,function(rs){
 	    rs.result  = rs.result? rs.result : [];
 	    (function(){
 	        for(var z = 0;z < rs.result.length; z++){

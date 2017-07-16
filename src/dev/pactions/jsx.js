@@ -6,6 +6,7 @@ var Briefs = require("../common/jsx/Brief.jsx");
 var API = require("../common/API");
 var pb = require("../common/publicUtil");
 var struct = require("../plugin/struct");
+var apiHost = "http://106.14.123.71:3000"; 
 
 /*
  //样例数据格式
@@ -14,7 +15,7 @@ var data2 = [{words:[{cont:"内容1",day:"1号"},{cont:"内容2",day:"2号"}],mo
 ];*/
 
  //请求index的数据
-API.getNB("/index",null,function(rs){
+API.getNB(apiHost + "/index",null,function(rs){
     rs.result  = rs.result? rs.result : [];
     (function(){
         for(var z = 0;z < rs.result.length; z++){

@@ -1,5 +1,6 @@
 var API = require("../common/API");
 var pb = require("../common/publicUtil");
+var apiHost = "http://106.14.123.71:3000"; 
 
 
 var alertNB = pb.alertNB;
@@ -38,7 +39,7 @@ $(".add_btn").on("click",function(){
     data.time = time;
     var userName = "朱星宇";
     data.userName = userName;
-    API.postNB("/write",data,null,function(r){
+    API.postNB(apiHost + "/write",data,null,function(r){
       if(r.code == "01"){
           alertNB("添加成功！",function(){
               window.location.href = "./index.html";
@@ -56,7 +57,7 @@ var __a = {};
 __a.id = id;
 
 //如果有id传进来则请求对应id的文章内容
-id? API.postNB("/init",__a,null,function(r){
+id? API.postNB(apiHost  + "/init",__a,null,function(r){
     if(r.code == "01"){
         $(".write_area").val(r.result[0].content);
     }

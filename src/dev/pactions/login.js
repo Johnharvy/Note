@@ -1,7 +1,7 @@
 var API = require("../common/API");
 var pb = require("../common/publicUtil");
 var header = require("../common/templates/header.hbs");
-var apiHost = "";
+var apiHost = "http://106.14.123.71:3000"; 
 
 var alertNB = pb.alertNB;
 $("#header").html(header);
