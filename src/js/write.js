@@ -55,22 +55,21 @@ webpackJsonp([3],[
 
 	var id = window.location.search;
 	var pat1 = /id+(\=)+\d+/;
-	var id = id.match(pat1)[0].substr(3);
+	var id = id? id.match(pat1)[0].substr(3) : "";
 	var __a = {};
 	__a.id = id;
 
-	//请求对应id的文章内容
-	API.postNB("/init",__a,null,function(r){
+	//如果有id传进来则请求对应id的文章内容
+	id? API.postNB("/init",__a,null,function(r){
 	    if(r.code == "01"){
 	        $(".write_area").val(r.result[0].content);
 	    }
-
-	    if(r.code == "00"){
+	   if(r.code == "00"){
 	        alertNB(r.message);
 	    }
 	},function(err){
 	    alertNB(r.message);
-	});
+	}) : null;
 
 
 

@@ -8,8 +8,10 @@ function writeAction() {  //写入记事
     app.post("/write", function (req, rep){
         var data = req.body;
         data.userName = req.session.userName;
+        console.log(userName);
         text.addText(data.userName,data.content, function (err,rs) {
             if (err) {
+                console.log(err,"write");
                 var msg = {code: "00", message: "查询错误！"};
                 rep.send(JSON.stringify(msg));
             } else {
@@ -26,7 +28,7 @@ function init(){
         console.log(data);
         text.findTextById(data.id,function (err,rs) {
             if (err) {
-                console.log(err);
+                
                 var msg = {code: "00", message: "找不到文章！"};
                 rep.send(JSON.stringify(msg));
             } else {

@@ -24,9 +24,9 @@ var Briefs = React.createClass({
         <div className="list_time">{this.props.month1}</div>
         <div className="list_line"></div>
         <ul>
-            {this.props.words1.map(function(item){
+            {this.props.words1.map(function(item,id){
                 return (
-                    <Brief word={item}/>
+                    <Brief key={id} word={item}/>
                        );
              })}
 
@@ -43,10 +43,10 @@ var Briefs = React.createClass({
              <div>
                  <ul>
                    {/*React.Children.map(this.state.t1,function(item){*/
-                       this.props.data.map(function(item){
+                       this.props.data.map(function(item,id){
                        return(
                            <div>
-                               <Briefs words1 = {item.words} month1 = {item.month}> </Briefs>
+                               <Briefs key={id} words1 = {item.words} month1 = {item.month}> </Briefs>
                            </div>
                         );
                     })

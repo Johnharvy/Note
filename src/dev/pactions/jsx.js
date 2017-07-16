@@ -15,6 +15,7 @@ var data2 = [{words:[{cont:"内容1",day:"1号"},{cont:"内容2",day:"2号"}],mo
 
  //请求index的数据
 API.getNB("/index",null,function(rs){
+    rs.result  = rs.result? rs.result : [];
     (function(){
         for(var z = 0;z < rs.result.length; z++){
             rs.result[z].date2 =  rs.result[z].date.substr(5,2);

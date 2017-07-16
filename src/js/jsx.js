@@ -50,6 +50,7 @@ webpackJsonp([1],[
 
 	 //请求index的数据
 	API.getNB("/index",null,function(rs){
+	    rs.result  = rs.result? rs.result : [];
 	    (function(){
 	        for(var z = 0;z < rs.result.length; z++){
 	            rs.result[z].date2 =  rs.result[z].date.substr(5,2);
@@ -22298,9 +22299,9 @@ webpackJsonp([1],[
 	        React.createElement("div", {className: "list_time"}, this.props.month1), 
 	        React.createElement("div", {className: "list_line"}), 
 	        React.createElement("ul", null, 
-	            this.props.words1.map(function(item){
+	            this.props.words1.map(function(item,id){
 	                return (
-	                    React.createElement(Brief, {word: item})
+	                    React.createElement(Brief, {key: id, word: item})
 	                       );
 	             })
 
@@ -22317,10 +22318,10 @@ webpackJsonp([1],[
 	             React.createElement("div", null, 
 	                 React.createElement("ul", null, 
 	                   /*React.Children.map(this.state.t1,function(item){*/
-	                       this.props.data.map(function(item){
+	                       this.props.data.map(function(item,id){
 	                       return(
 	                           React.createElement("div", null, 
-	                               React.createElement(Briefs, {words1: item.words, month1: item.month}, " ")
+	                               React.createElement(Briefs, {key: id, words1: item.words, month1: item.month}, " ")
 	                           )
 	                        );
 	                    })
@@ -22336,6 +22337,7 @@ webpackJsonp([1],[
 
 
 	module.exports=IndexList;
+
 
 /***/ }),
 /* 211 */
