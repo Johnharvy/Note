@@ -5,7 +5,7 @@ webpackJsonp([2],[
 	var API = __webpack_require__(22);
 	var pb = __webpack_require__(24);
 	var header = __webpack_require__(1);
-	var apiHost = "http://106.14.123.71";
+	var apiHost = "";
 
 	var alertNB = pb.alertNB;
 	$("#header").html(header);

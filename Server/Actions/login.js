@@ -27,11 +27,13 @@ function login(){
 
 }
 
+//处理注册
 function registerAction(){
        app.post("/reg",function(req,rep){
            var data = req.body;
            console.log(data);
            user.findUserByName(data.userName,data.password,function(err,rs){
+               console.log(rs);
                if(rs[0]) {
                    var msg = {code:"02",message:"该用户名已注册！"};
                    rep.send(JSON.stringify(msg));
