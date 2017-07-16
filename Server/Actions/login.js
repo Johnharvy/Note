@@ -2,9 +2,10 @@ var express = require("express");
 var http = require("http");
 var app = require("../../app");
 var user = require("../DAO/User");
+var apiUrl = "http://106.14.123.71";
 
 function login(){
-    app.post("/login",function(req,rep){
+    app.post(apiUrl + "/login",function(req,rep){
         var data = req.body;
         console.log(data);
         user.findUserByName(data.userName,data.password,function(err,rs){
@@ -27,7 +28,7 @@ function login(){
 }
 
 function registerAction(){
-       app.post("/reg",function(req,rep){
+       app.post(apiUrl + "/reg",function(req,rep){
            var data = req.body;
            console.log(data);
            user.findUserByName(data.userName,data.password,function(err,rs){
