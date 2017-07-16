@@ -45,8 +45,8 @@ var Briefs = React.createClass({
                    {/*React.Children.map(this.state.t1,function(item){*/
                        this.props.data.map(function(item,id){
                        return(
-                           <div>
-                               <Briefs key={id} words1 = {item.words} month1 = {item.month}> </Briefs>
+                           <div key={id}>
+                               <Briefs  words1 = {item.words} month1 = {item.month}> </Briefs>
                            </div>
                         );
                     })
