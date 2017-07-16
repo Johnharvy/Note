@@ -2,7 +2,7 @@ var express = require("express");
 var http = require("http");
 var app = require("../../app");
 var user = require("../DAO/User");
-var apiUrl = "http://106.14.123.71/do";
+var apiUrl = "http://106.14.123.71/do/do";
 
 function login(){
     app.post(apiUrl + "/login",function(req,rep){
