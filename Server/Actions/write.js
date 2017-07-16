@@ -28,7 +28,6 @@ function init(){
         console.log(data);
         text.findTextById(data.id,function (err,rs) {
             if (err) {
-                
                 var msg = {code: "00", message: "找不到文章！"};
                 rep.send(JSON.stringify(msg));
             } else {

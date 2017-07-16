@@ -16,9 +16,9 @@ var D2 = React.createClass({
     render:function(){
         return (
             <div>
-              {this.props.monthnote.map(function(item){
+              {this.props.monthnote.map(function(item,id){
                     return (
-                        <D1 daynote={item}/>
+                        <D1 key={id} daynote={item}/>
                     );
                 })}
             </div>

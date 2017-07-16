@@ -22256,9 +22256,9 @@ webpackJsonp([1],[
 	    render:function(){
 	        return (
 	            React.createElement("div", null, 
-	              this.props.monthnote.map(function(item){
+	              this.props.monthnote.map(function(item,id){
 	                    return (
-	                        React.createElement(D1, {daynote: item})
+	                        React.createElement(D1, {key: id, daynote: item})
 	                    );
 	                })
 	            )
