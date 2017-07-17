@@ -6,7 +6,8 @@ var Briefs = require("../common/jsx/Brief.jsx");
 var API = require("../common/API");
 var pb = require("../common/publicUtil");
 var struct = require("../plugin/struct");
-var apiHost = "http://106.14.123.71:3000"; 
+var apiHost = require("../common/apiMain");
+apiHost = apiHost.apiHost;
 
 /*
  //样例数据格式

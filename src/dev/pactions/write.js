@@ -1,6 +1,7 @@
 var API = require("../common/API");
 var pb = require("../common/publicUtil");
-var apiHost = "http://106.14.123.71:3000"; 
+var apiHost = require("../common/apiMain");
+apiHost = apiHost.apiHost;
 
 
 var alertNB = pb.alertNB;

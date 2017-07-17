@@ -3,17 +3,27 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "buildTest": "NODE_ENV=development webpack -p ",
+    "buildProd": "NODE_ENV=production webpack -p"
   },
   "dependencies": {
-    "express": "3.21.2",
-    "jade": "*"
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "jade": "*",
+    "method-override": "^2.3.9",
+    "morgan": "^1.8.2",
+    "static-favicon": "^2.0.0-alpha"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
+    "body-parser": "^1.17.2",
+    "connect": "^3.6.2",
     "connect-flash": "^0.1.1",
     "css-loader": "^0.23.1",
+    "errorhandler": "^1.5.0",
     "file-loader": "^0.11.2",
     "handlebars": "^4.0.10",
     "handlebars-loader": "^1.5.0",

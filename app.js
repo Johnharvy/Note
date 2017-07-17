@@ -3,34 +3,33 @@ var http = require('http');
 var path = require('path');
 
 var app = express();
-//上传文件
-var flash=require("connect-flash");
-var multer=require("multer");
+//锟较达拷锟侥硷拷
+// var flash=require("connect-flash");
+var multer = require("multer");
+var cookieParser = require('cookie-parser')
+var session = require("express-session");
+var favicon = require("static-favicon");
+var logger = require("morgan");
+var methodOverride = require("method-override");
+var bodyParser = require('body-parser');
+var errorhandler = require("errorhandler");
 
-//文件上传的中间件
-app.use(multer({
-  dest:"../public/images",
-  rename:function(fieldName,fileName){return fileName;}
-}));
-//使用session会话层
-app.use(express.cookieParser());
-app.use(express.session({secret:"blog",cookie:{maxAge:7200000}}));
+app.use(session({secret:"Note",cookie:{maxAge:72000000}}));
 
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
+app.use(favicon());
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(methodOverride());
 
-app.use(express.static(path.join(__dirname))); //默认根文件绝对地址为访问基地址
+app.use(express.static(path.join(__dirname))); //默锟较革拷锟侥硷拷锟斤拷锟皆碉拷址为锟斤拷锟绞伙拷锟斤拷址
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+  app.use(errorhandler());
 }
 
 module.exports = app;

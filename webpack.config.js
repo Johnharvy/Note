@@ -4,7 +4,9 @@ var baseUrl = "./src/dev/pactions/";
 
 module.exports = {
     //插件项
-    plugins: [commonsPlugin],
+    plugins: [commonsPlugin,new webpack.DefinePlugin({
+        'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV) }
+    })],
     //页面入口文件配置
     entry: {
       index : baseUrl + "index.js",

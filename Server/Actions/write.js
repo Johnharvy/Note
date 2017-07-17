@@ -7,8 +7,8 @@ var text = require("../DAO/Text");
 function writeAction() {  //写入记事
     app.post("/write", function (req, rep){
         var data = req.body;
+        console.log(req.session.userName,"88");
         data.userName = req.session.userName;
-        console.log(userName);
         text.addText(data.userName,data.content, function (err,rs) {
             if (err) {
                 console.log(err,"write");
