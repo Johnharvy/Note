@@ -1,13 +1,15 @@
 var mqlConnect = require("../common/database").mqlConnect;
 
 
-//增
+//根据用户名增
 function addText(userName,content,callback){
     var sqlStr = "insert into text(userName,content) values (?,?);";
     mqlConnect.query(sqlStr,[userName,content], function (err,result) {
         callback(err,result);
     });
 }
+
+
 //删
 function deleteText(userName,id,callback){
     var sqlStr = "delete from text where userName = ? and id = ?;";

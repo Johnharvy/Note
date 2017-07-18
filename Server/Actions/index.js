@@ -5,7 +5,6 @@ var text = require("../DAO/Text");
 
 function indexAction(){
     app.get("/index",function(req,rep){
-        console.log(req.session,"index");
         text.findTexts(req.session.userName,function(err,rs){
             if(err){
                 var msg = {code:"00",message:"查询错误！"};

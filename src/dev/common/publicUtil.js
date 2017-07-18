@@ -1,22 +1,11 @@
 //获取header部分所需信息
-function getHeaderNB(){
-    function getHeader(url){
-        var header;
-        var versionIndex=url.lastIndexOf("&version");
-        var tokenIndex=url.lastIndexOf("&token=");
-        var token=url.slice(tokenIndex+7,versionIndex);
-        var codeIndex=url.lastIndexOf("code=");
-        var code=url.slice(codeIndex+5,tokenIndex);
-        header={
-            token:token,
-            code:code
-        };
-        return header;
-    }
-
-    var infor=window.location.search;
-    var header=getHeader(infor);
-    return header;
+function getUrlParams(url){
+    var infor = window.location.search, params = {}, query = infor.slice(1);
+    query = query.split("&");
+    query && query.forEach(function(item){
+        params[item.split("=")[0]] = item.split("=")[1];
+    });
+    return params;
 }
 
 //jq-mobile下，根据select的option找到其序列位置，用于渲染更新数据
@@ -85,7 +74,7 @@ function printInfo(Arr){
 
 
 module.exports={
-    getHeaderNB:getHeaderNB, //获取提交所需的header验证信息
+    getUrlParams:getUrlParams, //获取提交所需的header验证信息
     getOptionIndex:getOptionIndex,
     alertNB:alertNB, //弹框
     printInfo:printInfo,

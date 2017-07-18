@@ -16,7 +16,7 @@ var Brief = React.createClass({
    }
    });
 
-  //简略列表
+  //文章在首页简略列表
 var Briefs = React.createClass({
     render : function(){
     return (
@@ -26,7 +26,7 @@ var Briefs = React.createClass({
         <ul>
             {this.props.words1.map(function(item,id){
                 return (
-                    <Brief key={id} word={item}/>
+                    <Brief key={id} word={item}/> 
                        );
              })}
 

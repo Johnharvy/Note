@@ -31,7 +31,7 @@ function login(){
 function registerAction(){
        app.post("/reg",function(req,rep){
            var data = req.body;
-           console.log(data,"login's param");
+           
            user.findUserByName(data.userName,data.password,function(err,rs){
                if(rs[0]) {
                    var msg = {code:"02",message:"该用户名已注册！"};

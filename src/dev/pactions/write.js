@@ -24,6 +24,7 @@ $(".add_btn").on("click",function(){
     var words = $(".write_area").val();
     var data = {};
 
+    //调整时间数据格式
     function add0(){
         var temp;
         if(this < 10){
@@ -38,11 +39,14 @@ $(".add_btn").on("click",function(){
     var time = date.getFullYear() + "-" + (date.getMonth() + 1).add0() + "-" + date.getDate().add0() + " " + date.getHours().add0() +":" + date.getMinutes().add0() + ":" +date.getSeconds().add0();
     data.content = words;
     data.time = time;
-    var userName = "朱星宇";
-    data.userName = userName;
+    // var userName = "朱星宇";
+    // data.userName = userName;
+    data.id = pb.getUrlParams(location.search).id;
+
+    //添加文章
     API.postNB(apiHost + "/write",data,null,function(r){
       if(r.code == "01"){
-          alertNB("添加成功！",function(){
+          alertNB(r.message,function(){
               window.location.href = "./index.html";
           });
       }

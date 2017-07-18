@@ -7,6 +7,8 @@ var alertNB = pb.alertNB;
 
 $("#header_hb").html(header);
 $("#footer_hb").html(footer);
+
+//调整显示部分不会遮住底部
 var height = $(window).height();
 $("#content").css({"height":(height-120)+"px",});
 

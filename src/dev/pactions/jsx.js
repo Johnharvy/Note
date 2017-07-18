@@ -44,14 +44,13 @@ API.getNB(apiHost + "/index",null,function(rs){
             data[i].month = _r[i][0].date.getTime().month;
             data[i].words=[];
             (function(){
-                for(var j = 0; j< _r[i].length; j++){
-                       data[i].words[j] = {cont: _r[i][j].content, day: _r[i][j].date.getTime().day,id:_r[i][j].id};
+                for(var j = _r[i].length - 1 ; j >= 0 ; j--){
+                       data[i].words.push( {cont: _r[i][j].content, day: _r[i][j].date.getTime().day,id:_r[i][j].id});
                 }
             })();
         }
     })();
-
-
+ 
     if(document.getElementById("list")){
         ReactDOM.render(
         <Briefs data={data}/>,
