@@ -4,7 +4,7 @@ var app = require("../../app");
 var text = require("../DAO/Text");
 
 function indexAction(){
-    app.get("/index",function(req,rep){
+    app.post("/index",function(req,rep){
         text.findTexts(req.session.userName,function(err,rs){
             if(err){
                 var msg = {code:"00",message:"查询错误！"};
@@ -13,12 +13,14 @@ function indexAction(){
                 var msg = {code:"01",message:"查询成功！",result:rs};
                 rep.send(JSON.stringify(msg));
             }else{
-                var msg = {code:"02",message:"查无数据！"};
+                var msg = {code:"02",message:"您还没有记录的文章！"};
                 rep.send(JSON.stringify(msg));
             }
         });
     });
 }
 
-module.exports = indexAction;
+module.exports = {
+    indexAction :  indexAction
+};
 

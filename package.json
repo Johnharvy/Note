@@ -11,10 +11,8 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
     "express-session": "^1.15.3",
-    "jade": "*",
     "method-override": "^2.3.9",
-    "morgan": "^1.8.2",
-    "static-favicon": "^2.0.0-alpha"
+    "morgan": "^1.8.2"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",

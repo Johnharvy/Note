@@ -10,7 +10,8 @@ function login(){
         console.log(data);
         user.findUserByName(data.userName,data.password,function(err,rs){
              if(err){
-                 var msg = {code:"00",message:"登录失败！"};
+                 console.log(err);
+                 var msg = {code:"00",message: "登录失败"};
                  rep.send(JSON.stringify(msg));
              }else if(rs[0]){
                  console.log(rs[0]);
