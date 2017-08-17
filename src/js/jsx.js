@@ -43,8 +43,8 @@ webpackJsonp([1],[
 	var Briefs = __webpack_require__(210);
 	var API = __webpack_require__(22);
 	var pb = __webpack_require__(24);
-	var struct = __webpack_require__(211);
-	var apiHost = __webpack_require__(213);
+	var struct = __webpack_require__(212);
+	var apiHost = __webpack_require__(211);
 	apiHost = apiHost.apiHost;
 
 	/*
@@ -22200,7 +22200,7 @@ webpackJsonp([1],[
 	var React = __webpack_require__(26);
 	var $ = __webpack_require__(23);
 	var API = __webpack_require__(22);
-	var apiMain = __webpack_require__(213);
+	var apiMain = __webpack_require__(211);
 	var alertNB = __webpack_require__(24).alertNB;
 	  //简略单条
 	var Brief = React.createClass({displayName: "Brief",
@@ -22282,6 +22282,26 @@ webpackJsonp([1],[
 /* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	/**
+	 * Created by zhuxingyu on 17/7/17.
+	 */
+
+	// process.env.NODE_ENV = "development";
+
+
+	var apiMain = (undefined) === "production" ?
+	    "http://106.14.123.71:3000" : "";
+
+	var apiMain =  "http://106.14.123.71:3000";  
+
+	module.exports ={ 
+	   apiHost: apiMain
+	}
+
+/***/ }),
+/* 212 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {var struct = (function(){
 	//The first attribute is  an array object that contains objects, second is public attribute of objects,you can divide the objects into many teams  by the same pro value.
 	this.getTeamsBy = function(arr,pro){  
@@ -22345,10 +22365,10 @@ webpackJsonp([1],[
 
 	if (typeof module != "undefined" && module !== null && module.exports) module.exports = struct;
 	else if (true) !(__WEBPACK_AMD_DEFINE_RESULT__ = function() {return struct}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(212)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(213)(module)))
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports) {
 
 	module.exports = function(module) {
@@ -22362,23 +22382,6 @@ webpackJsonp([1],[
 		return module;
 	}
 
-
-/***/ }),
-/* 213 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/**
-	 * Created by zhuxingyu on 17/7/17.
-	 */
-
-	(undefined) = "development";
-
-	var apiMain = (undefined) === "production" ?
-	    "http://106.14.123.71:3000" : "";
-
-	module.exports ={ 
-	   apiHost: apiMain
-	}
 
 /***/ })
 ]);

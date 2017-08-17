@@ -6,7 +6,7 @@ webpackJsonp([2],{
 	var API = __webpack_require__(22);
 	var pb = __webpack_require__(24);
 	var header = __webpack_require__(1);
-	var apiHost = __webpack_require__(213);
+	var apiHost = __webpack_require__(211);
 	apiHost = apiHost.apiHost;
 	console.log(apiHost);
 
@@ -1324,17 +1324,20 @@ webpackJsonp([2],{
 
 /***/ }),
 
-/***/ 213:
+/***/ 211:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/**
 	 * Created by zhuxingyu on 17/7/17.
 	 */
 
-	(undefined) = "development";
+	// process.env.NODE_ENV = "development";
+
 
 	var apiMain = (undefined) === "production" ?
 	    "http://106.14.123.71:3000" : "";
+
+	var apiMain =  "http://106.14.123.71:3000";  
 
 	module.exports ={ 
 	   apiHost: apiMain

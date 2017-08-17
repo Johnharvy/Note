@@ -4,8 +4,11 @@
 
 // process.env.NODE_ENV = "development";
 
+
 var apiMain = process.env.NODE_ENV === "production" ?
     "http://106.14.123.71:3000" : "";
+
+var apiMain =  "http://106.14.123.71:3000";  
 
 module.exports ={ 
    apiHost: apiMain
