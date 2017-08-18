@@ -12,7 +12,7 @@ webpackJsonp([3],{
 	var alertNB = pb.alertNB;
 	var date = new Date();
 	var lis  = $(".write_date ul li");
-	lis.eq(0).html((date.getMonth() + 1) + "—" + date.getDate());
+	lis.eq(0).html((date.getMonth() + 1) + "-" + date.getDate());
 	lis.eq(1).html(date.getHours() + ":" + date.getMinutes());
 	if(date.getHours() > 11) lis.eq(2).html("下午");
 	else{lis.eq(2).html("上午");}

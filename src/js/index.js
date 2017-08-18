@@ -16,9 +16,12 @@ webpackJsonp([0],[
 	var height = $(window).height();
 	$("#content").css({"height":(height-120)+"px",});
 
+
 	$(".create_btn").on("click",function(){
+	     $(this).css({background : "#eee"})
 	    window.location.href="./write.html";
 	});
+
 
 
 

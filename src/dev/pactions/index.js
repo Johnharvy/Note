@@ -12,9 +12,15 @@ $("#footer_hb").html(footer);
 var height = $(window).height();
 $("#content").css({"height":(height-120)+"px",});
 
+
 $(".create_btn").on("click",function(){
     window.location.href="./write.html";
 });
+
+$(".delete_btn").on("click",function(){
+    window.location.href="./setOptions.html";
+});
+
 
 
 
