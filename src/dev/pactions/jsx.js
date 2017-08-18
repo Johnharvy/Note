@@ -20,7 +20,7 @@ var data2 = [{words:[{cont:"内容1",day:"1号"},{cont:"内容2",day:"2号"}],mo
 
  //请求index的数据
 API.postNB(apiHost + "/index",null,null,function(rs){
-
+    rs.code === "06" && (location.href = "./login.html");
     rs.result  = rs.result ? rs.result : [];
    
     (function(){
@@ -29,7 +29,13 @@ API.postNB(apiHost + "/index",null,null,function(rs){
         }
     })();
      var _r = struct.getTeamsBy(rs.result,"date2");
-
+     var mons = {};
+     _r.forEach(function(mon){
+           mon.length && (mons[mon[0]["date2"]] = mon.length)
+     });
+ 
+     localStorage && localStorage.setItem("mons",JSON.stringify(mons));
+   
     //得到月份和日期
     function getTime(){
         var _a = {};

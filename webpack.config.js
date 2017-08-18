@@ -12,8 +12,8 @@ module.exports = {
       index : baseUrl + "index.js",
       write : baseUrl + "write.js",
       login : baseUrl + "login.js",
-
-      jsx :[baseUrl + "jsx.js"]
+      option : baseUrl + "option.js",
+        jsx :[baseUrl + "jsx.js"]
     },
 
     //入口文件输出配置

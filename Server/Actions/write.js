@@ -6,6 +6,7 @@ var text = require("../DAO/Text");
 
 function writeAction() {  //写入记事
     app.post("/write", function (req, rep){
+       if(!req.session.userName)  {rep.send(JSON.stringify({code : "06", msg : "登录超时"})); return;}
         var data = req.body;
         data.userName = req.session.userName;
         console.log(data);
@@ -32,6 +33,7 @@ function writeAction() {  //写入记事
 
 function init(){
     app.post("/init", function (req, rep){
+        if(!req.session.userName) { rep.send(JSON.stringify({code : "06", msg : "登录超时"})); return;}
         var data = req.body;
         text.findTextById(data.id,function (err,rs) {
             if (err) {
@@ -48,6 +50,7 @@ function init(){
 //删除文章 
 function deleteText(){
     app.post("/delete",function (req, rep){
+           if(!req.session.userName)  {rep.send(JSON.stringify({code : "06", msg : "登录超时"})); return;}
            var data  = req.body;
 
            text.deleteText(req.session.userName,data.id,function (err,rs){

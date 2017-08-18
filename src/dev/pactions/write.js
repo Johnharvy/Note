@@ -45,6 +45,7 @@ $(".add_btn").on("click",function(){
 
     //添加文章
     API.postNB(apiHost + "/write",data,null,function(r){
+      r.code === "06" &&  (location.href = "./login.html");  
       if(r.code == "01"){
           alertNB(r.message,function(){
               window.location.href = "./index.html";
@@ -63,6 +64,7 @@ __a.id = id;
 
 //如果有id传进来则请求对应id的文章内容
 id? API.postNB(apiHost  + "/init",__a,null,function(r){
+    r.code === "06" &&  (location.href = "./login.html");
     if(r.code == "01"){
         $(".write_area").val(r.result[0].content);
     }

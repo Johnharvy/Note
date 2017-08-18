@@ -5,7 +5,9 @@ var text = require("../DAO/Text");
 
 function indexAction(){
     app.post("/index",function(req,rep){
-        text.findTexts(req.session.userName,function(err,rs){
+        if(!req.session.userName)  rep.send(JSON.stringify({code : "06", msg : "登录超时"}));
+        
+        else text.findTexts(req.session.userName,function(err,rs){
             if(err){
                 var msg = {code:"00",message:"查询错误！"};
                 rep.send(JSON.stringify(msg));
