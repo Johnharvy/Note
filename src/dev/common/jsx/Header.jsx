@@ -3,7 +3,7 @@ var React = require("react");
 var Header = React.createClass({
      redirect : function(title){
            var rurl;
-           title === "首页" ? rurl = "./index.html" : (history.go(-1));
+           title === "首页" ? rurl = "./index.html" : (window.history.back());
            window.location.href = rurl; 
      },
      render:function(){
