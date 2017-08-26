@@ -1,10 +1,18 @@
+/*
+ * 设置项页面
+*/
+ var React = require("react");
+ var ReactDOM = require("react-dom");
+ var Header = require("../common/jsx/Header.jsx"); //头部组件
+ ReactDOM.render(<Header/>,document.querySelector("#header_hb"));
+
  layui.use('element', function(){
   var $ = layui.jquery
   ,element = layui.element(); //Tab的切换功能，切换事件监听等，需要依赖element模块
 });
  
    //设置统计图层
-  var app = echarts.init(document.getElementById("chartMount")),option = {},mons = [0,0,0,0,0,0,0,0,0,0,0,0]; //绑定渲染的dom图层
+  var app = echarts.init(document.getElementById("chartMount")),option = {},mons = [0,0,0,0,0,0,0,0,0,0,0,0],max = 10; //绑定渲染的dom图层
   function getMonths(){
      var m = [];
       for(var i = 1; i < 13; i++ ){
@@ -17,10 +25,13 @@
      var m = JSON.parse(localStorage.mons);
 
      for(var i in m){
+        max < m[i] && ( max = m[i])
         mons[del0(i) - 1] = m[i]
      }
   }
-  console.log(mons);
+  console.log(max % 5);
+  max %  5 ?  max +=  5 - max % 5  : max += max /5
+ 
 
   option = {
      title: {
@@ -46,7 +57,7 @@
             //纵坐标显示,不设置最小与最大刻度时将自动调整
             yAxis: {
                 min : 0,
-                max : 10
+                max : max
             },
             //对应显示项的数据项
             series: [{
@@ -68,3 +79,5 @@
      str[0] === "0" && (str = str.replace("0",""))
      return str
   }
+
+  //设置地图

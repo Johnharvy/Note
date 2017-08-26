@@ -10,6 +10,7 @@ var API = require("../common/API");
 var pb = require("../common/publicUtil");
 var struct = require("../plugin/struct");
 var apiHost = require("../common/apiMain");
+var Header = require("../common/jsx/Header.jsx"); //头部组件
 apiHost = apiHost.apiHost;
 
 /*
@@ -17,6 +18,8 @@ apiHost = apiHost.apiHost;
 var data2 = [{words:[{cont:"内容1",day:"1号"},{cont:"内容2",day:"2号"}],month:"1"},
     {words:[{cont:"内容3",day:"3号"},{cont:"内容4",day:"4号"}],month:"2"}
 ];*/
+
+ReactDOM.render(<Header/>,document.querySelector("#header_hb"));
 
  //请求index的数据
 API.postNB(apiHost + "/index",null,null,function(rs){

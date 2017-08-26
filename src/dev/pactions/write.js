@@ -1,6 +1,10 @@
 var API = require("../common/API");
 var pb = require("../common/publicUtil");
 var apiHost = require("../common/apiMain");
+var React = require("react");
+var ReactDOM = require("react-dom");
+var Header = require("../common/jsx/Header.jsx"); //头部组件
+ReactDOM.render(<Header/>,document.querySelector("#header_hb"));
 apiHost = apiHost.apiHost;
 
 
