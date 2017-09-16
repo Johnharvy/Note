@@ -31,6 +31,7 @@ module.exports = {
             { test: /\.(hbs|html)$/, loader: "handlebars"}
         ]
     },
+   
     //其它解决方案配置
     resolve: {
         root:'G:/baseNode/baseNd/baseNd/views', //绝对路径
