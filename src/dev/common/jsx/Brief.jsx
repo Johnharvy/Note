@@ -20,10 +20,11 @@ var Brief = React.createClass({
                 alert("请求数据出错!");  
              });});   
     },
+
     render:function(){
     return (
         <div className="list_single">
-              <div className="list_content"  onClick = {this.clickHandle}><nobr>{this.props.word.cont}</nobr></div>
+              <div className="list_content"  onClick = {this.clickHandle}><nobr dangerouslySetInnerHTML={{__html: this.props.word.cont}}></nobr></div>
               <div className="list_date">{this.props.word.day} 
               <span onClick = {this.del.bind(this,this.props.word.id)} className="del">删除</span></div>
         </div>
