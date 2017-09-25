@@ -2,19 +2,18 @@ var express = require("express");
 var http = require("http");
 var app = require("../../app");
 var user = require("../DAO/User");
-
+var Tool = require('../common/Tool');
 
 function login(){
-    app.post("/login",function(req,rep){
-        var data = req.body;
-        console.log(data);
+    app.all("/login",function(req,rep){
+       
+       var  data = Tool.parse([req.query,req.body])
+
         user.findUserByName(data.userName,data.password,function(err,rs){
              if(err){
-                 console.log(err);
                  var msg = {code:"00",message: "登录失败"};
                  rep.send(JSON.stringify(msg));
              }else if(rs[0]){
-                 console.log(rs[0]);
                  var msg = {code: "01",message:"身份正确！"};
                  req.session.userName = data.userName;
                  rep.send(JSON.stringify(msg));
@@ -23,6 +22,7 @@ function login(){
                  rep.send(JSON.stringify(msg));
              }
         });
+       
 
     });
 
@@ -30,9 +30,8 @@ function login(){
 
 //处理注册
 function registerAction(){
-       app.post("/reg",function(req,rep){
-           var data = req.body;
-           
+       app.all("/reg",function(req,rep){
+           var  data = Tool.parse([req.query,req.body])
            user.findUserByName(data.userName,data.password,function(err,rs){
                if(rs[0]) {
                    var msg = {code:"02",message:"该用户名已注册！"};

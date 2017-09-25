@@ -2,9 +2,10 @@ var express = require("express");
 var http = require("http");
 var app = require("../../app");
 var text = require("../DAO/Text");
+var Tool = require('../common/Tool');
 
 function indexAction(){
-    app.post("/index",function(req,rep){
+    app.all("/index",function(req,rep){
         if(!req.session.userName)  rep.send(JSON.stringify({code : "06", msg : "登录超时"}));
         
         else text.findTexts(req.session.userName,function(err,rs){
@@ -19,6 +20,7 @@ function indexAction(){
                 rep.send(JSON.stringify(msg));
             }
         });
+       
     });
 }
 

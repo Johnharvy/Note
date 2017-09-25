@@ -3,13 +3,14 @@ var app = require("../../app");
 var http = require("http");
 var crypto = require("crypto"); //生成秘钥的模块
 var text = require("../DAO/Text"); 
+var Tool = require('../common/Tool');
 
 function writeAction() {  //写入记事
-    app.post("/write", function (req, rep){
+    app.all("/write", function (req, rep){
        if(!req.session.userName)  {rep.send(JSON.stringify({code : "06", msg : "登录超时"})); return;}
-        var data = req.body;
+        var  data = Tool.parse([req.query,req.body])
         data.userName = req.session.userName;
-        console.log(data);
+       
         !data.id  ? text.addText(data.userName,data.content, function (err,rs) {
             if (err) {
                 var msg = {code: "00", message: "查询错误！"};
@@ -28,13 +29,14 @@ function writeAction() {  //写入记事
                 rep.send(JSON.stringify(msg));
             }
         })
+
     });
 }
 
 function init(){
-    app.post("/init", function (req, rep){
+    app.all("/init", function (req, rep){
         if(!req.session.userName) { rep.send(JSON.stringify({code : "06", msg : "登录超时"})); return;}
-        var data = req.body;
+        var  data = Tool.parse([req.query,req.body])
         text.findTextById(data.id,function (err,rs) {
             if (err) {
                 var msg = {code: "00", message: "找不到文章！"};
@@ -44,14 +46,15 @@ function init(){
                 rep.send(JSON.stringify(msg));
             }
         });
+       
     });
 }
 
 //删除文章 
 function deleteText(){
-    app.post("/delete",function (req, rep){
+    app.all("/delete",function (req, rep){
            if(!req.session.userName)  {rep.send(JSON.stringify({code : "06", msg : "登录超时"})); return;}
-           var data  = req.body;
+           var  data = Tool.parse([req.query,req.body])
 
            text.deleteText(req.session.userName,data.id,function (err,rs){
                 if (err){
@@ -62,7 +65,7 @@ function deleteText(){
                      rep.send(JSON.stringify(msg));
                 }
            });
-
+         
     });
 }
 
