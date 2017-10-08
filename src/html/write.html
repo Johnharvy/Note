@@ -6,15 +6,24 @@
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
     <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"/>
     <META HTTP-EQUIV="Expires" CONTENT="0"/>
-    <link rel= "stylesheet" href = "../dev/plugin/layui/css/layui.css"/>
-    <link rel= "stylesheet" href = "../dev/plugin/layui/css/layui.mobile.css"/>
     <script src="../dev/plugin/jquery.js"></script>
     <script src="../dev/plugin/layer.js"></script>
-    <script src="../dev/plugin/layui/layui.js"></script>
     <script src="../js/common.js"></script>
-    
+    <link rel="stylesheet" href="../css/public.css" />
     <title>创建日志</title>
-   
+    <style>
+        .write_head{height:45px;border:0px solid #000;background: rgb(248,247,245);color:rgb(150,150,150);
+            font-size:18px;}
+        .write_date ul li{width:60px;float:left;height:40px;list-style: none;border:0px solid #000;line-height:40px;
+                     text-align:center;}
+        .write_btn{width:80px;height:40px;float:right;border:0px solid #000;}
+         #write_cont{overflow-y:scroll;clear:both;width:100%;}
+        .write_area{width:90%;font-size:18px;resize:none;border:0px;padding:20px 15px 0px 15px;}
+        textarea.write_area:focus{outline-color: #fff;}
+        .add_btn{display:inline-block;width:100%;height:100%;background-image:url("../img/add.png");
+            background-position:0px -15px;}
+    </style>
+    <linlk rel='stylesheet' href= '../css/write.css'/>
 </head>
 <body>
     <div id='header_hb'></div>
@@ -30,7 +39,7 @@
     </div>
 
     <div id="write_cont">
-    <textarea class="write_area" id = 'edit'>
+    <textarea class="write_area">
 
     </textarea>
     </div>
