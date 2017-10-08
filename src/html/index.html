@@ -8,40 +8,18 @@
     <META HTTP-EQUIV="Expires" CONTENT="0"/>
     <script src="../dev/plugin/jquery.js"></script>
     <script src="../dev/plugin/layer.js"></script>
-    <script src="../js/common.js"></script>
     <link rel="stylesheet" href="../css/public.css" />
-    <title>创建日志</title>
-    <style>
-        .write_head{height:45px;border:0px solid #000;background: rgb(248,247,245);color:rgb(150,150,150);
-            font-size:18px;}
-        .write_date ul li{width:60px;float:left;height:40px;list-style: none;border:0px solid #000;line-height:40px;
-                     text-align:center;}
-        .write_btn{width:80px;height:40px;float:right;border:0px solid #000;}
-         #write_cont{overflow-y:scroll;clear:both;width:100%;}
-        .write_area{width:90%;font-size:18px;resize:none;border:0px;padding:20px 15px 0px 15px;}
-        textarea.write_area:focus{outline-color: #fff;}
-        .add_btn{display:inline-block;width:100%;height:100%;background-image:url("../img/add.png");
-            background-position:0px -15px;}
-    </style>
+    <link rel="stylesheet" href="../css/index.css" />
+    <script src="../js/common.js"></script>
+    <title>笔记本首页</title>
 </head>
 <body>
-    <div id='header_hb'></div>
-    <div class="write_head">
-         <div class="write_date">
-             <ul>
-                 <li></li>
-                 <li></li>
-                 <li></li>
-             </ul>
-         </div>
-         <div class="write_btn"><div class="add_btn"></div></div>
-    </div>
-
-    <div id="write_cont">
-    <textarea class="write_area">
-
-    </textarea>
-    </div>
-    <script src="../js/write.js"></script>
+  <div id="header_hb"></div>
+  <div id="content">
+      <div id="list"></div>
+  </div>
+  <div id="footer_hb"></div>
+  <script src="../js/index.js"></script>
+  <script src="../js/jsx.js"></script>
 </body>
 </html>
