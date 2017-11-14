@@ -64,6 +64,7 @@ API.postNB(apiHost + "/index",null,null,function(rs){
             })();
         }
     })();
+     data.reverse();
  
     if(document.getElementById("list")){
         ReactDOM.render(
