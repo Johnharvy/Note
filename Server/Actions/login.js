@@ -40,6 +40,7 @@ function registerAction(){
                else{
                    user.addUser(data.userName,data.password,function(err,rs){
                        if(err){
+                           console.log(err,"err");
                            var msg = {code:"00",message:"注册失败！"};
                            rep.send(JSON.stringify(msg));
                        }
