@@ -9,7 +9,7 @@ function checkSignature(params,token){
     var sha1=require('crypto').createHash('sha1');
      //将上面三个字符串拼接成一个字符串再进行sha1加密
     sha1.update(key);
-    return sha1.digest('hex') ==params.signature;
+    return sha1.digest('hex') == params.signature;
      //将加密后的字符串与signature进行对比，若成功，返回echostr
 }
 
