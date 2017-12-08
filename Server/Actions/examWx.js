@@ -5,7 +5,7 @@ var url = require("url");
 var crypto = require("crypto");
 
 function indexAction(){
-    app.all("/examWx",function(req,rep){
+    app.all("/examWx",function(req,res){
        
         var query = url.parse(req.url,true).query;
         console.log("*** URL:" + req.url);
