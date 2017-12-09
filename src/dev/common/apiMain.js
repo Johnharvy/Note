@@ -10,7 +10,7 @@ var apiMain = process.env.NODE_ENV === "production" ?
 
 var apiMain =  "http://ycccz.com"; 
 
-apiMain = "106.14.123.71:80";
+apiMain = "106.14.123.71:3000";
 
 module.exports ={ 
    apiHost: apiMain

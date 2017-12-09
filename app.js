@@ -17,7 +17,7 @@ var errorhandler = require("errorhandler");
 app.use(session({secret:"Note",cookie:{maxAge:72000000}}));
 
 // all environments
-app.set('port', process.env.PORT || 80);
+app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 // app.use(favicon());
 app.use(logger('dev'));
