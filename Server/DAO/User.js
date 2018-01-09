@@ -61,7 +61,7 @@ function findUserByName(userName,password,callback){
 }
 
 
-export default {
+module.exports = {
     addUser:addUser,
     deleteUser:deleteUser,
     updateUser:updateUser,
