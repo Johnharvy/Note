@@ -5,11 +5,7 @@
 // process.env.NODE_ENV = "development";
 
 
-var apiMain = process.env.NODE_ENV === "production" ?
-    "http://ycccz.com" : "";
-
-var apiMain =  "http://ycccz.com"; 
-
+var apiMain = location.origin;
 
 
 module.exports ={ 
