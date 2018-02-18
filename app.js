@@ -1,13 +1,8 @@
 var express = require('express');
 var http = require('http');
-var fs =  require('fs')
-var https = require('https');
 var path = require('path');
 
-var httpsOptions = {
-   key : fs.readFileSync('./214511821350771.key'),
-   cert : fs.readFileSync('./214511821350771.pem')
-}
+
 
 var app = express();
 //�ϴ��ļ�

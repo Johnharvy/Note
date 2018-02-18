@@ -26,7 +26,6 @@ var mqlConnect = require("./common/database").mqlConnect;
     console.log('Express server listening on port ' + app.get('port'));
 }); */
 
-https.createServer(app).listen(httpsOptions,app.get('port'), function(){
-    console.log('Express server listening on port ' + app.get('port'));
-});
+
+https.createServer(httpsOptions,app).listen(app.get('port'));
 
