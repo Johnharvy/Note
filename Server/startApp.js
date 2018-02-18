@@ -5,8 +5,8 @@ var https = require('https');
 
 
 var httpsOptions = {
-   key : fs.readFileSync('../214511821350771.key'),
-   cert : fs.readFileSync('../214511821350771.pem')
+   key : fs.readFileSync('./214511821350771.key'),
+   cert : fs.readFileSync('./214511821350771.pem')
 }
 
 var mqlConnect = require("./common/database").mqlConnect;
