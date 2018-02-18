@@ -7,7 +7,6 @@
 
 var apiMain = location.origin;
 
-
 module.exports ={ 
    apiHost: apiMain
 }
