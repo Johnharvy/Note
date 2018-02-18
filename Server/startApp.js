@@ -1,6 +1,14 @@
 var http = require("http");
 var app = require("../app");
-var fs = require("fs");
+var fs =  require('fs')
+var https = require('https');
+
+
+var httpsOptions = {
+   key : fs.readFileSync('./214511821350771.key'),
+   cert : fs.readFileSync('./214511821350771.pem')
+}
+
 var mqlConnect = require("./common/database").mqlConnect;
 
 
@@ -14,7 +22,11 @@ var mqlConnect = require("./common/database").mqlConnect;
           });
     })
 
-http.createServer(app).listen(app.get('port'), function(){
+/* http.createServer(app).listen(app.get('port'), function(){
+    console.log('Express server listening on port ' + app.get('port'));
+}); */
+
+https.createServer(app).listen(httpsOptions,app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
 });
 

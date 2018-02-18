@@ -1,6 +1,13 @@
 var express = require('express');
 var http = require('http');
+var fs =  require('fs')
+var https = require('https');
 var path = require('path');
+
+var httpsOptions = {
+   key : fs.readFileSync('./214511821350771.key'),
+   cert : fs.readFileSync('./214511821350771.pem')
+}
 
 var app = express();
 //�ϴ��ļ�
@@ -17,7 +24,7 @@ var errorhandler = require("errorhandler");
 app.use(session({secret:"Note",cookie:{maxAge:72000000}}));
 
 // all environments
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 80);
 app.set('views', path.join(__dirname, 'views'));
 // app.use(favicon());
 app.use(logger('dev'));

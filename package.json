@@ -11,8 +11,10 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
     "express-session": "^1.15.3",
+    "fs": "0.0.1-security",
     "gulp": "^3.9.1",
     "gulp-htmlone": "^0.1.9",
+    "https": "^1.0.0",
     "layui": "0.0.1",
     "method-override": "^2.3.9",
     "morgan": "^1.8.2"
