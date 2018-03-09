@@ -13,14 +13,9 @@ function checkSignature(params,token){
      //将加密后的字符串与signature进行对比，若成功，返回echostr
 }
 
-var server=http.createServer(function (request,response) {
-   var query=require('url').parse(request.url).query;
-    var params=qs.parse(query);
-
-    console.log(params);
-    console.log("token :",TOKEN);
-
-
+var server = http.createServer(function (request,response) {
+    var query = require('url').parse(request.url).query;
+    var params = qs.parse(query);
     if(!checkSignature(params,TOKEN)){
         //如果签名不对，结束请求并返回
         response.end('signature fail');
