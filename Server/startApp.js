@@ -4,9 +4,9 @@ var fs =  require('fs')
 var https = require('https'); 
 
 /* 验证微信 */
-var PORT = 8080
+/* var PORT = 8080
 var qs=require('qs');
-var TOKEN='yezhenxu'; 
+var TOKEN='yezhenxu';  */
 
 
 var httpsOptions = {
@@ -19,32 +19,34 @@ var mqlConnect = require("./common/database").mqlConnect;
 
  var baseUrl = "./Actions/"; //接口根目录
         //同步读取文件下的方法
-/*     fs.readdirSync(baseUrl).forEach(function(fdir){
+    fs.readdirSync(baseUrl).forEach(function(fdir){
           var Actions = {};
           Actions[fdir] = require(baseUrl + fdir.slice(0,-3));
           Object.keys(Actions[fdir]).forEach(function(item){
                 Actions[fdir][item]();
           });
-    }) */
+    }) 
 
-   /*  app.all(function(req,rep){
+  /*   app.all(function(req,rep){
         rep.send({
             code : 200
         })
-    }) */
+    })  */
+ 
+ http.createServer(app).listen(app.get('port'), function () {
+    console.log('Server running at port:'+ app.get('port'));
+});
 
-/* var server = http.createServer(app).listen(8080); */
 
 
 
-/* 
-https.createServer(httpsOptions,app).listen(443,function(){
+/* https.createServer(httpsOptions,app).listen(443,function(){
 
 }); */
 
 
 
-function checkSignature(params,token){
+/* function checkSignature(params,token){
     var key=[token,params.timestamp,params.nonce].sort().join(''); 
      //将token （自己设置的） 、timestamp（时间戳）、nonce（随机数）三个参数进行字典排序
     var sha1=require('crypto').createHash('sha1');
@@ -78,9 +80,7 @@ var server = http.createServer(function (request,response) {
             response.end('success ');
         });
     }
-});
+}); */
 
-server.listen(PORT, function () {
-    console.log('Server running at port:'+PORT);
-});
+
 
