@@ -6,9 +6,9 @@ var Tool = require('../common/Tool');
 
 function login(){
     app.all("/login",function(req,rep){
-       
+    
        var  data = Tool.parse([req.query,req.body])
-
+      
         user.findUserByName(data.userName,data.password,function(err,rs){
              if(err){
                  var msg = {code:"00",message: "登录失败"};
