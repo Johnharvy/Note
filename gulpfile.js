@@ -48,6 +48,17 @@ gulp.task('pushHtml',['build'],function () {
       }));
 });
 
+gulp.task('pushWx',function () {
+  return gulp.src('./weixin/html/**')
+      .pipe(sftp({
+          host: '106.14.123.71',
+          remotePath: '/home/Note/weixin/html/', //部署到服务器的路径
+          user: 'root', //帐号
+          pass: "2428347yu()", //密码
+          port: 22 //端口           
+      }));
+});
+
 gulp.task('default',['pushHtml']);
 
   

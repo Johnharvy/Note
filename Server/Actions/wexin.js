@@ -71,7 +71,7 @@ function getTicket(){
          //获取票据
         request('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' + access_token + '&type=jsapi', function(err, response, body){
         var jsapi_ticket = JSON.parse(body).ticket
-        
+        console.log(jsapi_ticket,'ticket')
         //获取票据
         var  nonce_str = '123456'  // 密钥，字符串任意，可以随机生成
         var  timestamp = new Date().getTime() // 时间戳
