@@ -13,7 +13,7 @@ var  secret = '73fe3791bd1b746f18b400f4ec33733c'
 
    //验证微信接口
 function examWxAction(){
-    app.all("/examWx",function(req,res){
+    app.all("/wxJssdk",function(req,res){
         
         var query = url.parse(req.url,true).query;
         console.log("*** URL:" + req.url);
@@ -31,12 +31,12 @@ function examWxAction(){
 
         oriArray[0] = nonce;
         oriArray[1] = timestamp;
-        oriArray[2] = "formWx";//这里是你在微信开发者中心页面里填的token，而不是****
+        oriArray[2] = "Johnharvy";//这里是你在微信开发者中心页面里填的token，而不是****
 
         oriArray.sort();
 
         var original = oriArray.join('');
-
+        
         var scyptoString = sha1(original);
 
         if(signature == scyptoString){
@@ -100,6 +100,6 @@ function getTicket(){
 
 
 module.exports = {
-   /*  examWxAction :  examWxAction,
-    getTicket  :  getTicket */
+    examWxAction :  examWxAction,
+    getTicket  :  getTicket
 };

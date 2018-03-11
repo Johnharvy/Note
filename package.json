@@ -6,7 +6,7 @@
     "start": "cd Server && node startApp.js",
     "buildTest": "NODE_ENV=development webpack -p ",
     "buildProd": "NODE_ENV=production webpack -p",
-    "push": ""
+    "push" : ""
   },
   "dependencies": {
     "cookie-parser": "^1.4.3",
@@ -15,11 +15,11 @@
     "fs": "0.0.1-security",
     "gulp": "^3.9.1",
     "gulp-htmlone": "^0.1.9",
-    "gulp-sftp": "^0.1.5",
     "https": "^1.0.0",
     "layui": "0.0.1",
     "method-override": "^2.3.9",
-    "morgan": "^1.8.2"
+    "morgan": "^1.8.2",
+    "gulp-sftp": "^0.1.5"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",

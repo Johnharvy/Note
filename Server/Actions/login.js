@@ -14,6 +14,7 @@ function login(){
                  var msg = {code:"00",message: "登录失败"};
                  rep.send(JSON.stringify(msg));
              }else if(rs[0]){
+                 
                  var msg = {code: "01",message:"身份正确！"};
                  req.session.userName = data.userName;
                  rep.send(JSON.stringify(msg));
