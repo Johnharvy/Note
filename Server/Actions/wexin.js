@@ -7,8 +7,8 @@ var crypto = require("crypto");
 
 var request = require('request')
 var  grant_type = 'client_credential'
-var  appid = 'wxd48e71a5287f29ee'
-var  secret = '73fe3791bd1b746f18b400f4ec33733c'
+var  appid = 'wx1a30593cc918dafb'
+var  secret = '505a24a69c3276b77c216d2545ed2990'
 
 
    //验证微信接口
