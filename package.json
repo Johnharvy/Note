@@ -6,7 +6,8 @@
     "start": "cd Server && node startApp.js",
     "buildTest": "NODE_ENV=development webpack -p ",
     "buildProd": "NODE_ENV=production webpack -p",
-    "push" : ""
+    "push" : "",
+    "restart" :"cd Server && forever restart startApp.js" 
   },
   "dependencies": {
     "cookie-parser": "^1.4.3",
