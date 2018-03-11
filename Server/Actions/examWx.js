@@ -100,5 +100,6 @@ function getTicket(){
 
 
 module.exports = {
-    examWxAction :  examWxAction
+    examWxAction :  examWxAction,
+    getTicket  :  getTicket
 };
