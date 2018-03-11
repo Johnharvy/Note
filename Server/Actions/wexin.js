@@ -66,7 +66,7 @@ function getTicket(){
           
          //获取token
     request('https://api.weixin.qq.com/cgi-bin/token?grant_type=' + grant_type + '&appid=' + appid + '&secret=' + secret, function(err, response, body) {
-        var  access_toekn = JSON.parse(body).access_token
+        var access_token = JSON.parse(body).access_token
         console.log(access_toekn,'123');
          //获取票据
         request('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' + access_token + '&type=jsapi', function(err, response, body){
