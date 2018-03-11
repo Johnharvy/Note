@@ -86,7 +86,7 @@ function getTicket(){
          //发送给前端
         res.send({
             appId: appid,
-            timestamp: timpstamp,
+            timestamp: timestamp,
             nonceStr: nonce_str,
             signature: signature,
            })
