@@ -6,7 +6,13 @@ module.exports = {
     //插件项
     plugins: [commonsPlugin,new webpack.DefinePlugin({
         'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV) }
-    })],
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      })
+   ],
     //页面入口文件配置
     entry: {
       index : baseUrl + "index.js",

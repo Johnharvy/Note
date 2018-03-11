@@ -7,6 +7,8 @@
 
 var apiMain = location.origin;
 
+/* apiMain = 'http://ycccz.com' */
+
 module.exports ={ 
    apiHost: apiMain
 }

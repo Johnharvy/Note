@@ -1,0 +1,10 @@
+.write_head{height:45px;border:0px solid #000;background: rgb(248,247,245);color:rgb(150,150,150);
+    font-size:18px;}
+.write_date ul li{width:60px;float:left;height:40px;list-style: none;border:0px solid #000;line-height:40px;
+             text-align:center;}
+.write_btn{width:80px;height:40px;float:right;border:0px solid #000;}
+ #write_cont{overflow-y:scroll;clear:both;width:100%;}
+.write_area{width:90%;font-size:18px;resize:none;border:0px;padding:20px 15px 0px 15px;}
+textarea.write_area:focus{outline-color: #fff;}
+.add_btn{display:inline-block;width:100%;height:100%;background-image:url("../img/add.png");
+    background-position:0px -15px;}
