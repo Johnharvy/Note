@@ -14,7 +14,7 @@ var  secret = '73fe3791bd1b746f18b400f4ec33733c'
    //验证微信接口
 function examWxAction(){
     app.all("/examWx",function(req,res){
-       
+        
         var query = url.parse(req.url,true).query;
         console.log("*** URL:" + req.url);
         console.log(query);
@@ -49,13 +49,15 @@ function examWxAction(){
         
     });
 
-    function sha1(str){
-        var md5sum = crypto.createHash("sha1");
-        md5sum.update(str);
-        str = md5sum.digest("hex");
-        return str;
-      }
+   
 }
+
+function sha1(str){
+    var md5sum = crypto.createHash("sha1");
+    md5sum.update(str);
+    str = md5sum.digest("hex");
+    return str;
+  }
 
 //获取票据
 function getTicket(){
