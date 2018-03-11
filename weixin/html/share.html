@@ -15,7 +15,16 @@
 
     <script>
          $('.share').on('click',function(){
-
+            if(wx){
+                    wx.onMenuShareAppMessage({
+                    title: '你好',
+                    desc:  '这是介绍',
+                    link:  'http://ycccz.com/src/html/login.html',
+                    imgUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520783585485&di=513aff9c9c3348114cf1fb2f5188b904&imgtype=0&src=http%3A%2F%2Fimg05.tooopen.com%2Fimages%2F20150820%2Ftooopen_sy_139205349641.jpg'
+                    });
+                 }else{
+                     console.log('no wx!')
+                 }
          })
 
          $(function(){
@@ -25,8 +34,8 @@
                 type : 'post',
                 data : {url : location.href},
                 success : function(res){
-                    console.log(data,'data')
-                    var data = res.data;
+                    console.log(res,'data')
+                    var data = res;
                     wx.config({
                         debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
                         appId: data.appId, // 必填，公众号的唯一标识
@@ -37,16 +46,7 @@
                         'onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
                  });
 
-                 if(wx){
-                    wx.onMenuShareAppMessage({
-                    title: '你好',
-                    desc:  '这是介绍',
-                    link:  'http://ycccz.com/src/html/login.html',
-                    imgUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520783585485&di=513aff9c9c3348114cf1fb2f5188b904&imgtype=0&src=http%3A%2F%2Fimg05.tooopen.com%2Fimages%2F20150820%2Ftooopen_sy_139205349641.jpg'
-                    });
-                 }else{
-                     console.log('no wx!')
-                 }
+                
                 },
                 error : function(error){
                    console.log(error,'error')
