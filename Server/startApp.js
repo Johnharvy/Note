@@ -21,7 +21,7 @@ var mqlConnect = require("./common/database").mqlConnect;
         //同步读取文件下的方法
     fs.readdirSync(baseUrl).forEach(function(fdir){
           var Actions = {};
-          Actions[fdir] = require(baseUrl + fdir.slice(0,fdir.indexOf('.js')));
+          Actions[fdir] = require(baseUrl + fdir.slice(0,-3));
           Object.keys(Actions[fdir]).forEach(function(item){
                 Actions[fdir][item]();
           });
