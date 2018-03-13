@@ -73,12 +73,12 @@ function getTicket(){
         var jsapi_ticket = JSON.parse(body).ticket
         console.log(jsapi_ticket,'ticket')
         //获取票据
-        var  nonce_str = '123456'  // 密钥，字符串任意，可以随机生成
-        var  timestamp = 1520918913068 // 时间戳
+        var  nonce_str = 'abcdef'  // 密钥，字符串任意，可以随机生成
+        var  timestamp = new Date().getTime() // 时间戳
         var  url = req.query.url  // 使用接口的url链接，不包含#后的内容
       
         // 将请求以上字符串，先按字典排序，再以'&'拼接，如下：其中j > n > t > u，此处直接手动排序
-        var  str = 'jsapi_ticket=' + jsapi_ticket + '&noncestr=' + nonce_str + '×tamp=' + timestamp + '&url=' + url
+        var  str = 'jsapi_ticket=' + jsapi_ticket + '&noncestr=' + nonce_str + '&timestamp=' + timestamp + '&url=' + url
       
         // 用sha1加密
         var  signature = sha1(str)
@@ -89,6 +89,9 @@ function getTicket(){
             timestamp: timestamp,
             nonceStr: nonce_str,
             signature: signature,
+            view : {
+                 ti
+            }
            })
 
           })
