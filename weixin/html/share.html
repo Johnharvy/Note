@@ -14,7 +14,7 @@
     </div>
 
     <script>
-         $('.share').on('click',function(){
+        /*  $('.share').on('click',function(){
             if(wx){
                     wx.onMenuShareAppMessage({
                         title: '你好',
@@ -33,17 +33,16 @@
                  }else{
                      console.log('no wx!')
                  }
-         })
+         }) */
 
          $(function(){
-            /* 先获取access_token */
             $.ajax({
                 url : "http://ycccz.com/getJssdk",
                 type : 'post',
                 data : { url : location.href},
                 success : function(res){
-                    console.log(res,'data')
                     var data = res;
+                    console.log(data,'data')
                     wx.config({
                         debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
                         appId: data.appId, // 必填，公众号的唯一标识
@@ -60,8 +59,8 @@
                  });
 
 
-                        wx.ready(function () {
-            
+                 wx.ready(function () {
+                       
                         wx.onMenuShareTimeline({
                                 title: '你好',
                                 desc:  '这是介绍',
@@ -87,13 +86,14 @@
                            alert('失败')
                         }
                             });
-                         })
+                 })
 
 
-                            wx.error(function (res) {
-                                alert('error')
-                                // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
-                            })
+                wx.error(function (res) {
+                    alert('error')
+                    
+                    // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+                })
 
                 
                 },

@@ -78,7 +78,7 @@ function getTicket(){
         var  url = req.body.url  // 使用接口的url链接，不包含#后的内容
         console.log(req,'22')
         // 将请求以上字符串，先按字典排序，再以'&'拼接，如下：其中j > n > t > u，此处直接手动排序
-        var  str = 'jsapi_ticket=' + jsapi_ticket + '&noncestr=' + nonce_str + 'xtamp=' + timestamp + '&url=' + url
+        var  str = 'jsapi_ticket=' + jsapi_ticket + '&noncestr=' + nonce_str + '&timestamp=' + timestamp + '&url=' + url
       
         // 用sha1加密
         var  signature = sha1(str)
