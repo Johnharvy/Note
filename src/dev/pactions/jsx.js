@@ -68,7 +68,7 @@ API.postNB(apiHost + "/index",null,null,function(rs){
  
     if(document.getElementById("list")){
         ReactDOM.render(
-        <Briefs data={data}/>,
+        <Briefs data = {data}/>,
             document.getElementById("list")
     );
     }
