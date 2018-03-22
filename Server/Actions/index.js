@@ -6,11 +6,10 @@ var Tool = require('../common/Tool');
 
 function indexAction(){
     app.all("/index",function(req,rep){
-        var  data = Tool.parse([req.query,req.body])
+        var  data = Tool.parse([req.query,req.body,req.session])
         var userName = decodeURIComponent(data.userName || "")
         console.log(userName,'userName')
         if(!userName)  rep.send(JSON.stringify({code : "06", message : "先登录"}));
-        
         else text.findTexts(userName,function(err,rs){
             if(err){
                 var msg = {code:"00",message:"查询错误！"};
