@@ -15,16 +15,15 @@ function login(){
                  rep.send(JSON.stringify(msg));
              }else if(rs[0]){
                  
-                 var msg = {code: "01",message:"身份正确！",data : {userName : data.userName}};
+                 var msg = {code: "01",message:"身份正确！",userName : data.userName};
                  req.session.userName = data.userName;
                  rep.send(JSON.stringify(msg));
              }else{
-                 var msg = {code :"02",message:"用户名或者密码有误！",data : {userName : data.userName}}
+                 var msg = {code :"02",message:"用户名或者密码有误！",userName : data.userName}
                  rep.send(JSON.stringify(msg));
              }
         });
        
-
     });
 
 }
