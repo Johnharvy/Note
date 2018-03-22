@@ -6,9 +6,9 @@ var Tool = require('../common/Tool');
 
 function indexAction(){
     app.all("/index",function(req,rep){
-        if(!req.session.userName)  rep.send(JSON.stringify({code : "06", msg : "登录超时"}));
+        if(!req.body.userName)  rep.send(JSON.stringify({code : "06", message : "先登录"}));
         
-        else text.findTexts(req.session.userName,function(err,rs){
+        else text.findTexts(req.body.userName,function(err,rs){
             if(err){
                 var msg = {code:"00",message:"查询错误！"};
                 rep.send(JSON.stringify(msg));
