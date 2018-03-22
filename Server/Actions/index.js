@@ -7,6 +7,7 @@ var Tool = require('../common/Tool');
 function indexAction(){
     app.all("/index",function(req,rep){
         var userName = decodeURIComponent(req.body.userName)
+        console.log(userName,'userName')
         if(!userName)  rep.send(JSON.stringify({code : "06", message : "先登录"}));
         
         else text.findTexts(userName,function(err,rs){
