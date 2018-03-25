@@ -7,9 +7,11 @@ var Tool = require('../common/Tool');
 
 function writeAction() {  //写入记事
     app.all("/write", function (req, rep){
-       if(!req.session.userName)  {rep.send(JSON.stringify({code : "06", msg : "登录超时"})); return;}
-        var  data = Tool.parse([req.query,req.body])
-        data.userName = req.session.userName;
+       /* if(!req.session.userName)  {rep.send(JSON.stringify({code : "06", msg : "登录超时"})); return;} */
+
+       var  data = Tool.parse([req.query,req.body,req.session])
+       var userName = decodeURIComponent(data.userName || "")
+       data.userName = userName;
        
         !data.id  ? text.addText(data.userName,data.content, function (err,rs) {
             if (err) {
@@ -35,8 +37,8 @@ function writeAction() {  //写入记事
 
 function init(){
     app.all("/init", function (req, rep){
-        if(!req.session.userName) { rep.send(JSON.stringify({code : "06", msg : "登录超时"})); return;}
-        var  data = Tool.parse([req.query,req.body])
+        /* if(!req.session.userName) { rep.send(JSON.stringify({code : "06", msg : "登录超时"})); return;} */
+        var  data = Tool.parse([req.query,req.body,req.session])
         text.findTextById(data.id,function (err,rs) {
             if (err) {
                 var msg = {code: "00", message: "找不到文章！"};
