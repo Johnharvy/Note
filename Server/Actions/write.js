@@ -56,10 +56,13 @@ function init(){
 //删除文章 
 function deleteText(){
     app.all("/delete",function (req, rep){
-           if(!req.session.userName)  {rep.send(JSON.stringify({code : "06", msg : "登录超时"})); return;}
-           var  data = Tool.parse([req.query,req.body])
+           /* if(!req.session.userName)  {rep.send(JSON.stringify({code : "06", msg : "登录超时"})); return;} */
+           var  data = Tool.parse([req.query,req.body,req.session])
+           var userName = decodeURIComponent(data.userName || "")
+           data.userName = userName;
+          
 
-           text.deleteText(req.session.userName,data.id,function (err,rs){
+           text.deleteText(data.userName,data.id,function (err,rs){
                 if (err){
                      var msg = {code : "00", message: "操作出错！"};
                      rep.send(JSON.stringify(msg));
