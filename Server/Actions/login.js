@@ -67,6 +67,7 @@ function registerAction(){
         }else{
             var msg = {code:"02",message:"退出异常！"};
             rep.send(JSON.stringify(msg));
+            
         }
     
     });
@@ -77,5 +78,5 @@ function registerAction(){
 module.exports = {
     login:login, //登录
     register:registerAction, //注册
-    exit : exit, //退出
+    exitAction : exitAction, //退出
 };
