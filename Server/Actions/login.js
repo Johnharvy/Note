@@ -52,7 +52,30 @@ function registerAction(){
        });
 }
 
+
+/**
+ *   退出
+ * 
+  */
+
+ function exitAction(){
+    app.all("/exit",function(req,rep){
+        if(req.session.userName){
+            req.session.userName = ""
+            var msg = {code:"00",message:"已经退出！"};
+            rep.send(JSON.stringify(msg));
+        }else{
+            var msg = {code:"02",message:"退出异常！"};
+            rep.send(JSON.stringify(msg));
+        }
+    
+    });
+}
+
+
+
 module.exports = {
     login:login, //登录
     register:registerAction, //注册
+    exit : exit, //退出
 };

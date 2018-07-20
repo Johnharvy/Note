@@ -14,7 +14,9 @@ function writeAction() {  //写入记事
        data.userName = userName;
        data.content = decodeURIComponent(data.content || "")
        
-        !data.id  ? text.addText(data.userName,data.content, function (err,rs) {
+        !data.id? 
+        
+        text.addText(data.userName,data.content, function (err,rs) {
             if (err) {
                 var msg = {code: "00", message: "查询错误！"};
                 rep.send(JSON.stringify(msg));
@@ -23,6 +25,7 @@ function writeAction() {  //写入记事
                 rep.send(JSON.stringify(msg));
             }
         }) : 
+
         text.updateText(data.content,data.userName,data.id, function (err,rs) {
             if (err) {
                 var msg = {code: "00", message: "查询错误！"};
@@ -60,8 +63,7 @@ function deleteText(){
            var  data = Tool.parse([req.query,req.body,req.session])
            var userName = decodeURIComponent(data.userName || "")
            data.userName = userName;
-          
-
+        
            text.deleteText(data.userName,data.id,function (err,rs){
                 if (err){
                      var msg = {code : "00", message: "操作出错！"};
